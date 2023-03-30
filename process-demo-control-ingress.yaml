@@ -2,9 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: process-demo-control-ingress
+# Uncomment for use in azure
+# annotations:
+#   kubernetes.io/ingress.class: addon-http-application-routing
 spec:
+# Uncomment for use in azure
+# rules:
+#   - host: control.<uuid>.northcentralus.aksapp.io
   defaultBackend:
     service:
       name: process-demo-control
       port:
         number: 1880
+
